@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/13 04:11:50 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/15 22:48:33 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 using std::cout;
 
-Fixed::Fixed( void ) :_raw(0) {cout << "Default constructor called" <<endl; }
+Fixed::Fixed( void ) :_raw(0) {cout << "Default constructor called" <<endl; }   // Default constructor
 
-Fixed::~Fixed( void ) {cout << "Destructor called" << endl;}
+Fixed::~Fixed( void ) {cout << "Destructor called" << endl;}                    // Destructor
 
-Fixed::Fixed (const Fixed &fixed) { *this = fixed; }				// this becomes the arg=fixed
+Fixed::Fixed (const Fixed &fixed) { *this = fixed; }				            // this becomes the arg=fixed
 
-Fixed &Fixed::operator=(const Fixed &fixed)					// surcharge
+Fixed    &Fixed::operator=(const Fixed &fixed)			        		        // surcharge
 {
     cout << "Copy assignment operator called" << endl;
     if (this != &fixed)
@@ -29,7 +29,8 @@ Fixed &Fixed::operator=(const Fixed &fixed)					// surcharge
     return *this;
 }
 
-int Fixed::getRawBits(void) const {
+int Fixed::getRawBits(void) const 
+{
     cout << "getRawBits member function called" << endl;
     return _raw;
 }
