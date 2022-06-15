@@ -20,3 +20,12 @@ a + b  -> b = right hand side = rhs
 [nom_class] &operator=( [nom_class] const & rhs);     # opérateur d'assignation
  ```
  
+## Binary point
+ Binary point  is the number of bits used to represent the fractional part of the number.
+```
+53 and 26.5 is exactly the same. 
+The only difference, is the position of binary point. 
+In the case of 53, there is "no" binary point.
+53 = 11 0101 = 1 * 2**5 + 1 * 2**4 + 1 * 2**2 + 1 * 2**0 = 32 + 16 + 4 + 1 = 53
+26.5 = 1 1010.1 = 1 * 2**4 + 1 * 2**3 + 1 * 2**1 + 1 * 2**-1 = 16 + 8 + 2 + 0.5
+```
