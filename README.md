@@ -29,3 +29,5 @@ In the case of 53, there is "no" binary point.
 53 = 11 0101 = 1 * 2**5 + 1 * 2**4 + 1 * 2**2 + 1 * 2**0 = 32 + 16 + 4 + 1 = 53
 26.5 = 1 1010.1 = 1 * 2**4 + 1 * 2**3 + 1 * 2**1 + 1 * 2**-1 = 16 + 8 + 2 + 0.5
 ```
+Conversion float to fix
+https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
