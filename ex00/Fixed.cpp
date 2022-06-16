@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 23:20:15 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:42:56 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ Fixed::Fixed( void ) :_raw(0) {cout << "Default constructor called" <<endl; }   
 
 Fixed::~Fixed( void ) {cout << "Destructor called" << endl;}                    // Destructor
 
-Fixed::Fixed (const Fixed &fixed) { *this = fixed; }				            // copy constructor
+
+Fixed::Fixed (const Fixed &fixed)                                                   // copy constructor
+{
+     cout << "Copy constructor called" << endl;
+     *this = fixed;
+}
 
 Fixed    &Fixed::operator=(const Fixed &fixed)			        		        // surcharge
 {

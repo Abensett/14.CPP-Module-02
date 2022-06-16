@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 23:27:41 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:45:53 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,20 @@
 using std::cout;
 
 
-Fixed::Fixed( void ) :_raw(0) {cout << "Default constructor called" <<endl; }
+Fixed::Fixed( void ) :_raw(0) {}
 
-Fixed::~Fixed( void ) {cout << "Destructor called" << endl;}
+Fixed::~Fixed( void ) {}
 
 Fixed::Fixed (const Fixed &fixed) { *this = fixed; }				// this becomes the arg=fixed
 
 Fixed &Fixed::operator=(const Fixed &fixed)					// surcharge
 {
-    cout << "Copy assignment operator called" << endl;
     if (this != &fixed)
         _raw = fixed.getRawBits();
     return *this;
 }
 
 int Fixed::getRawBits(void) const {
-    cout << "getRawBits member function called" << endl;
     return _raw;
 }
 
@@ -40,9 +38,9 @@ void Fixed::setRawBits(const int raw)
     _raw = raw;
 }
 
-Fixed::Fixed( const int raw ) : _raw(raw << _nb_bits_frac) {cout << "Int constructor called" << endl; }
+Fixed::Fixed( const int raw ) : _raw(raw << _nb_bits_frac) {}
                                     // * 256 shifting direct car raw est int
-Fixed::Fixed( const float raw ) : _raw(roundf(raw *(1 << _nb_bits_frac))) {cout << "Int constructor called" << endl; }
+Fixed::Fixed( const float raw ) : _raw(roundf(raw *(1 << _nb_bits_frac))) {}
                                     // * 256 car ici nb bits pour partie fractionnaire = 8
 
 float Fixed::toFloat(void) const
