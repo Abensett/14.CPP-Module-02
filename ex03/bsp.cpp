@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 00:37:26 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 23:05:00 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:35:50 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ a) d > 0, alors C est à gauche de la droite
 b) d = 0, alors C est sur la droite
 c) d < 0, alors C est à droite de la droite
 **********************************************************/
-static Fixed IsLeft(const Point a, const Point b, const Point c)
+static Fixed IsLeft(Point const a, Point const b, Point const c)
 {            // IsLeftulate (Ax - Bx)(Cy - Ay)
 	Fixed tmp_1 = (b.get_x() - a.get_x()) * (c.get_y() - a.get_y());        //IsLeftulate (Ay - By)(Cx - Bx)
 	Fixed tmp_2 = (b.get_y() - a.get_y()) * (c.get_x() - a.get_x());

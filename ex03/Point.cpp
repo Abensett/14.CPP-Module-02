@@ -6,15 +6,15 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 00:26:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 01:34:22 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:38:41 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- 
+
 #include "Point.hpp"
 
 Point::Point(void) : _x(0), _y(0) {}                                // Default constructor   //initialize the point to (0, 0)
-Point::~Point(void) {}                                              // Destructor   
+Point::~Point(void) {}                                              // Destructor
 
 Point::Point(const float x, const float y) : _x(x), _y(y) {}        // Constructor with parameters
 
@@ -36,6 +36,7 @@ const Fixed Point::get_y(void) const {
     return _y;
 }
 
-ostream &operator<<(ostream &o, const Point &point) {
+ostream &operator<<(ostream &o, const Point &point)         // affiche mon point (x, y)
+{
     return (o << "(" << point.get_x() << ", " << point.get_y() << ")");
 }

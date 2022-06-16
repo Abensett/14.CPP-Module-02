@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 21:45:02 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:28:09 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int Fixed::getRawBits(void) const {return _raw ;}
 void Fixed::setRawBits(const int raw) {_raw = raw ;}
 
 Fixed::Fixed( const int raw ) : _raw(raw << _nb_bits_frac) {cout << "Int constructor called" << endl; }
-                                        // * 256 = shit by 8
+                                        // * 256 = shit by 8  shift possible car raw est un int
 Fixed::Fixed( const float raw ) : _raw(roundf(raw * (1 << _nb_bits_frac))) {cout << "Float constructor called" << endl; }
-                                            // * 256
+                                            // * 256        ici raw pas int
 
 float Fixed::toFloat(void) const { return (static_cast<float>(_raw) / (1 << _nb_bits_frac)); }
 

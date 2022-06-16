@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 00:19:14 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 01:31:04 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:37:00 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #define POINT_HPP_
 
 #include "Fixed.hpp"
-class Point 
+class Point
 {
  public:
     Point(void);
      ~Point(void);
     Point(const float x, const float y);            // double float constructor
-    Point(const Point &point);                      // copy constructor 
+    Point(const Point &point);                      // copy constructor
     Point &operator=(const Point &point);
 
     const Fixed get_x(void) const;
@@ -36,5 +36,5 @@ ostream &operator<<(ostream &o, const Point &point);
 
 /* bsp.cpp */
 // a, b, c are the 3 points of the triangle, point is the point to test return True si dans le triangle, False sinon (sommet et arretes return FALSE)
-bool bsp(const Point a, const Point b, const Point c, const Point point);       
+bool bsp( Point const a, Point  const b, Point const c,  Point const point);
 #endif

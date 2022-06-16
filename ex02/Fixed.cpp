@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 00:17:31 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:27:41 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void Fixed::setRawBits(const int raw)
 }
 
 Fixed::Fixed( const int raw ) : _raw(raw << _nb_bits_frac) {cout << "Int constructor called" << endl; }
-
+                                    // * 256 shifting direct car raw est int
 Fixed::Fixed( const float raw ) : _raw(roundf(raw *(1 << _nb_bits_frac))) {cout << "Int constructor called" << endl; }
-
+                                    // * 256 car ici nb bits pour partie fractionnaire = 8
 
 float Fixed::toFloat(void) const
 {

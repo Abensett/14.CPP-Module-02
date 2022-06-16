@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/15 22:48:33 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:20:15 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ Fixed::Fixed( void ) :_raw(0) {cout << "Default constructor called" <<endl; }   
 
 Fixed::~Fixed( void ) {cout << "Destructor called" << endl;}                    // Destructor
 
-Fixed::Fixed (const Fixed &fixed) { *this = fixed; }				            // this becomes the arg=fixed
+Fixed::Fixed (const Fixed &fixed) { *this = fixed; }				            // copy constructor
 
 Fixed    &Fixed::operator=(const Fixed &fixed)			        		        // surcharge
 {
     cout << "Copy assignment operator called" << endl;
-    if (this != &fixed)
+    if (this != &fixed)                                         // utilisation de assert(this, &fixed)
         _raw = fixed.getRawBits();
     return *this;
 }
 
-int Fixed::getRawBits(void) const 
+int Fixed::getRawBits(void) const                                               // Accessor
 {
     cout << "getRawBits member function called" << endl;
     return _raw;
