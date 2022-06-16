@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:13 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 01:32:27 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:02:09 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 using std::cout;
 using std::endl;
 
-static void check(const Point a, const Point x, const Point y, const Point z) {
-    cout << a << (bsp(x, y, z, a) ? " is inside" : " is outside")
-            << " Triangle XYZ" << endl;
-    cout << a << (bsp(z, y, x, a) ? " is inside" : " is outside")
-            << " Triangle ZYX" << endl;
+static void check(const Point point, const Point a, const Point b, const Point c)
+{
+    cout << point << (bsp(a, b, c, point) ? " is inside" : " is outside")
+    << " the triangle." << endl;
 }
 
 int main(void) {
@@ -33,10 +32,12 @@ int main(void) {
     Point c(1, 0.5f);
     Point d(0.5f, 0);
     Point e(0.5f, 0.5f);
+    Point f(0.25f,0.25f);
+    Point g(0.375f,0.375f);
 
-    cout << "x: " << x << endl;
-    cout << "y: " << y << endl;
-    cout << "z: " << z << endl;
+    cout << "a: " << x << endl;
+    cout << "b: " << y << endl;
+    cout << "c: " << z << endl;
 
     check(a, x, y, z);
     check(b, x, y, z);
@@ -46,6 +47,8 @@ int main(void) {
     check(x, x, y, z);
     check(y, x, y, z);
     check(z, x, y, z);
+    check(f, x, y, z);
+    check(g, x, y, z);
 
     return 0;
 }
